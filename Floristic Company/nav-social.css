@@ -1,0 +1,45 @@
+.social-menu li a:before {
+    font-family: 'Fontawesome';
+    -webkit-font-smoothing: antialiased;
+    content: '\f08e';
+}
+
+.social-menu li a[href*="facebook.com"]::before { content: '\f09a'; }
+
+.social-menu li a[href*="instagram.com"]::before { content: '\f16d'; }
+
+.social-menu li a[href*="linkedin.com"]::before { content: '\f0e1'; }
+
+.social-menu li a[href*="twitter.com"]::before { content: '\f099'; }
+
+.social-menu li a[href*="youtube.com"]::before { content: '\f167'; }
+
+
+/* Flexbox stuff */
+
+.social-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#social-menu {
+    display: none;
+}
+
+@media screen and (min-width: 620px) {
+    .social-menu ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    #social-menu {
+        display: flex;
+    }
+
+    #contact-icons {
+        display: none;
+    }
+}
+

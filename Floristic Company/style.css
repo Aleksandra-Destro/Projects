@@ -1,0 +1,184 @@
+@import url('reset.css');
+@import url('nav-social.css');
+@import url('cards.css');
+
+/* color palette:
+
+	grey #9AA8A8
+	green #466A44
+	light pink almost white #E0D5BE
+	light pink #E0908D
+	pink #C7495C
+
+
+	additional:
+		grey-green #88A795
+		grey #AAABA8
+		shadow pink #BC7B77
+		light shadow pink #CD9B9D
+		very light shadow pink #DBC7C9
+
+*/
+
+body {
+    height: auto;
+    background-color: #E0D5BE;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+.centered {
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 52em) {
+    .centered {
+        max-width: 52em;
+    }
+}
+
+.masthead {
+    background: #E0D5BE;
+    font-size: 20px;
+}
+
+.site-title {
+    margin: 0 0 .5em;
+    padding: .5em 0;
+    font-size: 2em;
+    font-weight: 300;
+    text-align: center;
+    color: black;
+}
+
+
+
+@media screen and (min-width: 44.44em) {
+    .site-title {
+        font-size: 2em;
+    }
+}
+    
+@media screen and (min-width: 50em) {
+    .site-title {
+        font-size: 2.5em;
+    }
+}
+
+.site-title {
+    color: #C7495C;
+}
+
+
+.menu-section {
+	padding-bottom: 2em;
+	margin-bottom: 2em;
+	/* border-bottom: 1px solid hsl(0, 0%, ); */
+    position: sticky;
+    top: 10px;
+    font-size: 1em;
+}
+
+
+.menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	background: hsl(351, 53%, 53%);
+}
+
+.menu li a {
+	display: block;
+	text-decoration: none;
+	color: #E0D5BE;
+	padding: .6em 1em;
+	background: hsl(351, 53%, 53%);
+}
+
+.menu li a:hover {
+	background: hsl(2, 57%, 72%);
+}
+
+@media screen and (min-width: 25em) {
+ 
+    .single-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .single-nav li {
+        flex: 1 0 auto;
+        text-align: center;
+    }
+    
+}
+
+.mixed-menu {
+    display: flex;
+    background: hsl(351, 53%, 53%);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+/* Grid and Flexbox stuff */
+
+.cards {
+    margin: 1em;
+}
+
+@media screen and (min-width: 40em) {
+    .cards {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: -1em;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .card {
+        grid-template-rows: auto 1fr;
+    }
+
+    .card-content {
+        grid-row-start: 2;
+    }
+
+}
+
+@media screen and (min-width: 60em) {
+    .cards {
+        margin-top: inherit;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .card {
+        grid-template-rows: auto 1fr;
+    }
+
+    .card-content {
+        grid-row-start: 2;
+    }
+}
+
+
+.contact-info {
+    text-align: center;
+    margin: 2rem;
+}
