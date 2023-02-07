@@ -3,9 +3,8 @@
 const colors = [...document.querySelectorAll(".color")];
 
 const gridContainer = document.querySelector(".grid-container");
-console.log(gridContainer);
-let rows = document.getElementsByClassName("grid-row");
-let cells = document.getElementsByClassName("cell");
+
+const cells = document.getElementsByClassName("cell");
 
 const gridSize = document.getElementById("select-grid-size");
 const options = document.querySelectorAll(".size");
@@ -31,19 +30,7 @@ const createGrid = function (num) {
     let newCell = document.createElement("div");
     newCell.classList.add("cell");
     gridContainer.appendChild(newCell);
-
-    // let size = 700 / num;
-
-    // for (let cell of cells) {
-    //   cell.style.width = `${size}px`;
-    //   cell.style.height = `${size}px`;
-    // }
   }
-
-  // for (j = 0; j < num; j++) {}
-  // const newDiv = document.createElement("div");
-  // newDiv.classList.add("grid-cell");
-  // gridContainer.appendChild(newDiv);
 };
 
 const clearGrid = function () {
@@ -55,16 +42,11 @@ createGrid(8 * 8);
 gridSize.addEventListener("change", clearGrid);
 
 gridSize.addEventListener("change", function () {
+  removeSelected();
   const optValue = gridSize.value.split("x");
   createGrid(optValue[0] * optValue[1]);
   gridContainer.style.gridTemplateRows = `repeat(${optValue[0]}, 1fr)`;
   gridContainer.style.gridTemplateColumns = `repeat(${optValue[0]}, 1fr)`;
-
-  // cells.forEach((cell) => (cell.style.backgroundColor = ""));
-
-  // if (optValue[0] === "12") {
-  //   gridContainer.classList.contains("twelve").style.zIndex = "2";
-  // }
 });
 
 const rgbOutput = function (arr) {
@@ -111,8 +93,16 @@ window.addEventListener("mouseup", function () {
   draw = false;
 });
 
-clearBtn.addEventListener("click", function () {
-  let cells = document.querySelectorAll(".cell");
-  cells.forEach((cell) => (cell.style.backgroundColor = ""));
+const clearCells = function () {
+  let gridCells = document.querySelectorAll(".cell");
+  gridCells.forEach((cell) => (cell.style.backgroundColor = ""));
+};
+
+const removeSelected = function () {
   colors.forEach((color) => color.classList.remove("selected"));
+};
+
+clearBtn.addEventListener("click", function () {
+  clearCells();
+  removeSelected();
 });

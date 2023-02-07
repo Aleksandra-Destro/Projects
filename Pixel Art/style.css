@@ -11,18 +11,16 @@
     black: #000000 / 0, 0, 0
     grey: #989898 / 152, 152, 152
 
-    COLOR PALETTE: 
+    COLORS FOR BG AND SELECTED: 
 
     coffee: #9c4b28
     peach: #fdb195
     light-peach-pink: #ffd1bb
     almost white: #fffaf6
 
-
 */
 
 body {
-  /* box-sizing: border-box; */
   font-family: Arial, Helvetica, sans-serif;
   background: linear-gradient(45deg, #fffaf6, #ffd1bb 40%, #fdb195);
 }
@@ -123,42 +121,10 @@ main {
   grid-template-rows: repeat(8, 1fr);
   background: white;
   margin: 20px auto;
+  border: 2px solid black;
 }
 
 .cell {
   border: 1px solid black;
   padding: 5px;
 }
-
-/* .grid-container.eight {
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-columns: repeat(8, 1fr);
-  border: 1px solid black;
-  z-index: 1;
-}
-
-.grid-container.twelve {
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-columns: repeat(12, 1fr);
-  border: 1px solid black;
-  z-index: 0;
-}
-
-.grid-container.sixteen {
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-columns: repeat(16, 1fr);
-  border: 1px solid black;
-  z-index: 0;
-}
-
-.grid-container.thirty-two {
-  grid-template-columns: repeat(32, 1fr);
-  grid-template-columns: repeat(32, 1fr);
-  border: 1px solid black;
-  z-index: 0;
-} */
-
-/* .grid-cell {
-  padding: 5px;
-  border: 1px solid black;
-} */
